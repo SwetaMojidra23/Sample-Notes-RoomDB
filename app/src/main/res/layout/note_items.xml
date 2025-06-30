@@ -33,11 +33,4 @@
             android:src="@android:drawable/ic_delete" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/inVisibleLayout"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
-        android:orientation="horizontal"
-        android:visibility="gone"/>
-
 </LinearLayout>

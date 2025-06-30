@@ -15,11 +15,8 @@ class NoteViewActivity : AppCompatActivity() {
     private val tvNoteTitle: TextView by lazy { findViewById(R.id.tvNoteTitle) }
     private val tvNoteContent: TextView by lazy { findViewById(R.id.tvNoteContent) }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
         enableEdgeToEdge()
         setContentView(R.layout.activity_note_view)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -30,13 +27,9 @@ class NoteViewActivity : AppCompatActivity() {
 
         val gson = Gson()
         val note: Note =
-            gson.fromJson<Note>(intent.getStringExtra("Note"), Note::class.java)
-
-//        val noteSerializable: NoteSerializable =
-//            intent.getSerializableExtra("Note") as NoteSerializable
+            gson.fromJson(intent.getStringExtra("Note"), Note::class.java)
 
         tvNoteTitle.text = note.title
         tvNoteContent.text = note.content
-
     }
 }
